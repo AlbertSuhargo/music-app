@@ -5,7 +5,7 @@ import { View, TouchableHighlight, StyleSheet, Text } from "react-native";
 import FastImage from "react-native-fast-image";
 
 export type TrackListItemProps = {
-    track: { title: string, image?: string, artist?: string }
+    track: { title: string; image?: string; artist?: string }
 }
 
 export const TracksListItem = ({ track }: TrackListItemProps) => {
@@ -15,14 +15,16 @@ export const TracksListItem = ({ track }: TrackListItemProps) => {
         <TouchableHighlight>
             <View style={styles.trackItemContainer}>
                 <View>
-                    <FastImage source={{
-                        uri: track.image ?? UnknownTrackImageUri,
-                        priority: FastImage.priority.normal,
-                    }}
+                    <FastImage
+                        source={{
+                            uri: track.image ?? UnknownTrackImageUri,
+                            priority: FastImage.priority.normal,
+                        }}
                         style={{
                             ...styles.trackArtworkImage,
                             opacity: isActiveTrack ? 0.6 : 1,
-                        }} />
+                        }}
+                    />
                 </View>
                 <View style={{ width: '100%' }}>
                     <Text
