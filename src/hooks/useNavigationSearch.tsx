@@ -1,7 +1,7 @@
-import { colors } from "@/constants/tokens"
-import { useNavigation } from "expo-router"
-import { useLayoutEffect, useState } from "react"
-import { SearchBarProps } from "react-native-screens"
+import { colors } from "@/constants/tokens";
+import { useNavigation } from "expo-router";
+import { useLayoutEffect, useState } from "react";
+import { SearchBarProps } from "react-native-screens";
 
 const defaultSearchOptions: SearchBarProps = {
     tintColor: colors.primary,
@@ -9,7 +9,7 @@ const defaultSearchOptions: SearchBarProps = {
 }
 
 export const useNavigationSearch = ({ searchBarOptions }: { searchBarOptions?: SearchBarProps }) => {
-    const { search, setSearch } = useState('')
+    const [ search, setSearch ]= useState('')
 
     const navigation = useNavigation()
 
