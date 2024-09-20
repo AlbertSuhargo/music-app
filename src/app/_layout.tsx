@@ -1,8 +1,13 @@
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { SplashScreen } from 'expo-router';
+import { useCallback } from 'react';
+
+SplashScreen.preventAutoHideAsync()
 
 const App = () => {
+  
   return (
     <SafeAreaProvider>
       <RootNavigation />
