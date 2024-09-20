@@ -12,7 +12,7 @@ type PlayerButtonProps = {
 }
 
 export const PlayPauseButton = ({ style, iconSize }: PlayerButtonProps) => {
-    const playing = true
+    const playing = false
 
     const displayedTrack = playing ?? {
         title: 'Placeholder Track'
