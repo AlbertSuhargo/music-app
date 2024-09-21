@@ -1,26 +1,23 @@
 import { UnknownTrackImageUri } from "@/constants/images";
 import { colors, fontSize } from "@/constants/tokens";
 import { defaultStyles } from "@/styles";
-import { View, TouchableHighlight, StyleSheet, Text } from "react-native";
-import FastImage from "react-native-fast-image";
+import { View, TouchableHighlight, StyleSheet, Text, Image } from "react-native";
 import { Entypo, Ionicons } from "@expo/vector-icons";
-// import LoaderKit from "react-native-loader-kit";
 
 export type TrackListItemProps = {
     track: { title: string; image?: string; artist?: string }
 }
 
 export const TracksListItem = ({ track }: TrackListItemProps) => {
-    const isActiveTrack = false
+    const isActiveTrack = false;
 
     return (
         <TouchableHighlight>
             <View style={styles.trackItemContainer}>
                 <View>
-                    <FastImage
+                    <Image
                         source={{
                             uri: track.image ?? UnknownTrackImageUri,
-                            priority: FastImage.priority.normal,
                         }}
                         style={{
                             ...styles.trackArtworkImage,
@@ -99,4 +96,4 @@ const styles = StyleSheet.create({
         top: 14,
         left: 14,
     },
-})
+});

@@ -1,25 +1,25 @@
 import { UnknownTrackImageUri } from "@/constants/images";
 import { TouchableOpacity, View, Text, ViewProps } from "react-native";
-import FastImage from "react-native-fast-image";
 import { StyleSheet } from "react-native";
 import { defaultStyles } from "@/styles";
 import { PlayPauseButton, SkipToNextButton, SkipToPreviousButton } from "@/components/PlayerControls";
+import { Image } from "react-native";
 
 export const FloatingPlayer = ({ style }: ViewProps) => {
 
     return <TouchableOpacity activeOpacity={0.9} style={[styles.container, style]}>
         <>
-            <FastImage
+            <Image
                 source={{
                     uri: UnknownTrackImageUri,
                 }}
                 style={styles.trackArtworkImage}
             />
             <View style={styles.trackTitleContainer}>
-                <Text style={styles.trackTitle}>Title Placeholder</Text>
+                <Text style={styles.trackTitle}>This is a very long title placeholder</Text>
             </View>
             <View style={styles.trackControlsContainer}>
-                <SkipToPreviousButton iconSize={22}/>
+                <SkipToPreviousButton iconSize={22} />
                 <PlayPauseButton iconSize={24} />
                 <SkipToNextButton iconSize={22} />
             </View>
